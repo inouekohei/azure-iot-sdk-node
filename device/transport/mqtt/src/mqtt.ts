@@ -276,7 +276,7 @@ export class Mqtt extends EventEmitter implements DeviceTransport {
             }
 
             /*Codes_SRS_NODE_COMMON_MQTT_BASE_16_010: [** The `sendEvent` method shall use QoS level of 1.]*/
-            this._mqtt.publish(topic, message.data, { qos: 1, retain: false }, (err, result) => {
+            this._mqtt.publish(topic, message.data, { qos: 0, retain: false }, (err, result) => {
               if (err) {
                 /*Codes_SRS_NODE_DEVICE_MQTT_16_027: [The `sendEvent` method shall call its callback with an `Error` that has been translated using the `translateError` method if the `MqttBase` object fails to publish the message.]*/
                 /*Codes_SRS_NODE_DEVICE_MQTT_18_050: [The `sendOutputEvent` method shall call its callback with an `Error` that has been translated using the `translateError` method if the `MqttBase` object fails to publish the message. ]*/
